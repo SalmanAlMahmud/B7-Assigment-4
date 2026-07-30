@@ -1,12 +1,17 @@
 import app from "./app";
 import config from "./config";
 
+const PORT = config.port
 
-if(config.NODE_ENV !== "production"){
-
-  app.listen(3000, () => {
-    console.log("server is running on http://localhost:3000");
-  });
-
+const main = async()=>{
+    try {
+        app.listen(PORT, () => {
+            console.log(`server is listening on port ${PORT}`);
+        })
+    } catch (error) {
+        console.log("Error starting the server : ", error)
+        process.exit(1);
+    }
 }
-export default app
+
+main()
