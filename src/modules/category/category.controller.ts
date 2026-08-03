@@ -53,7 +53,6 @@ const deleteCategory = catchAsync(async (req: Request, res: Response, next: Next
 
 export const categoryController = {
     getAllCategories,
-    createCategory
     createCategory,
     updateCategory,
     deleteCategory

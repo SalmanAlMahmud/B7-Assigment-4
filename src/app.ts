@@ -8,6 +8,7 @@ import { authRoutes } from "./modules/auth/auth.route"
 
 import { userRoutes } from "./modules/users/user.router"
 import { categoryRoutes } from "./modules/category/category.router"
+import { gearRoutes } from "./modules/gear/gear.route"
 
 
 const app : Application = express()
