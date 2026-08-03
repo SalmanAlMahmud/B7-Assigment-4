@@ -10,5 +10,11 @@ model User {
   updatedAt DateTime     @updatedAt
   profile   Profile?
 
+  gearItems GearItem[]
+  payments  Payment[]
+
+  rentalOrders RentalOrder[]
+  reviews      Review[]
+
   @@map("users")
 }
