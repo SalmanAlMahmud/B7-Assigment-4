@@ -1,6 +1,7 @@
 import type { Role } from "../../../prisma/generated/prisma/enums";
 
 
+
 export interface RegisterUserPayload {
     name: string;
     email: string;
@@ -9,3 +10,14 @@ export interface RegisterUserPayload {
     role?: Role;
     profilePhoto?: string;
 }
+declare global {
+    namespace Express {
+        interface Request {
+            user?: {
+                email: string;
+                name: string;
+                id: string;
+                role: Role;
+            }
+        }
+    }}
