@@ -1,9 +1,9 @@
 import { Router } from "express";
 import auth from "../../middleware/auth";
-import { createGearSchema, updateGearSchema, updateRentalStatusSchema } from "../../validations/requestSchemas";
 import { Role } from "../../../generated/prisma/enums";
 import { providerController } from "./provider.controller";
 import validateRequest from "../../middleware/validateRequest";
+import { createGearSchema, updateGearSchema, updateRentalStatusSchema } from "../../validations/requestSchema";
 
 const router = Router()
 

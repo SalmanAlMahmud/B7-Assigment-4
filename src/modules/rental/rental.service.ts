@@ -2,6 +2,7 @@ import { RentalStatus } from "../../../generated/prisma/enums"
 
 import { prisma } from "../../lib/prisma"
 import type { ICreateRental } from "./interface"
+import { diffInDays } from "./utils"
 
 
 const insertRentalIntoDB = async (payload: ICreateRental, customerId: string) => {

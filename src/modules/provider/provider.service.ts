@@ -1,9 +1,9 @@
-
 import { RentalStatus } from "../../../generated/prisma/enums";
 import { prisma } from "../../lib/prisma";
 import type { ICreateGear, IUpdateGear } from "../gear/interface";
 import type { IUpdateRentalStatus } from "../rental/interface";
 import { allowedTransitions } from "./utils";
+import type { Prisma } from "../../../generated/prisma/client";
 
 
 const insertGearIntoDB = async (payload: ICreateGear, providerId: string) => {
@@ -114,7 +114,7 @@ const updateOrderStatusInDB = async (orderId: string, payload: IUpdateRentalStat
         throw new Error(`Cannot change status from ${order.status} to ${payload.status}`)
     }
 
-    const result = await prisma.$transaction(async (tx) => {
+    const result = await prisma.$transaction(async (tx: Prisma.TransactionClient) => {
         if (payload.status === RentalStatus.RETURNED && order.status !== RentalStatus.RETURNED) {
 
             await tx.gearItem.update({

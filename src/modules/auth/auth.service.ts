@@ -1,4 +1,4 @@
-import { ActiveStatus, Role } from "../../../prisma/generated/prisma/enums";
+
 import config from "../../config";
 import { prisma } from "../../lib/prisma";
 import bcrypt from "bcryptjs"
@@ -6,6 +6,7 @@ import type { RegisterUserPayload } from "../users/interface";
 import type { IloginUser } from "./interface";
 import { jwtUtils } from "../../utils/jwt";
 import type { JwtPayload } from "jsonwebtoken";
+import { ActiveStatus, Role } from "../../../generated/prisma/enums";
 
 const registerUserInDB  = async(payload: RegisterUserPayload)=>{
     const { name, email, password, phone, role, profilePhoto } = payload
