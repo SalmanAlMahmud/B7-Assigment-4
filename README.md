@@ -7,12 +7,12 @@ GearUp is a premium **Gear Rental and Sharing Platform** where users can registe
 # 🌐 Live API
 
 **Production URL:**  
-https://assigment-4-lime.vercel.app/
+https://assigment-4-kk86mygrc-salman-bd86.vercel.app/
 
 **Base API URL:**
 
 ```text
-https://assigment-4-lime.vercel.app/api
+https://assigment-4-kk86mygrc-salman-bd86.vercel.app/
 ```
 
 ---
